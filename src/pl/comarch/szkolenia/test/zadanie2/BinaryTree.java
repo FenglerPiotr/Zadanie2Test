@@ -2,8 +2,6 @@ package pl.comarch.szkolenia.test.zadanie2;
 
 import java.util.TreeSet;
 
-//Rozwiązanie odnalezione na https://www.baeldung.com/java-binary-tree wprowadzone zmiany dot metod min i max.
-
 public class BinaryTree {
     Node root;
 
@@ -49,8 +47,7 @@ public class BinaryTree {
         }
 
         if (value == current.value) {
-            // Node to delete found
-            // ... code to delete the node will go here
+
         }
         if (value < current.value) {
             current.left = deleteRecursive(current.left, value);
@@ -59,11 +56,11 @@ public class BinaryTree {
         current.right = deleteRecursive(current.right, value);
         return current;
     }
-    private int min(Node root) {
-        return root.left == null ? root.value : min(root.left);
+    private int min(Node node) {
+        return node.left == null ? node.value : min(node.left);
     }
-    private int max(Node root) {
-        return root.right == null ? root.value : max(root.right);
+    private int max(Node node) {
+        return node.right == null ? node.value : max(node.right);
 
     }
 }
